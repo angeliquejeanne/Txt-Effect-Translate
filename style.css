@@ -1,0 +1,117 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
+body 
+{
+  margin: 0;
+  padding: 0;
+  background: black;
+}
+.card-1,
+.card-2,
+.card-3,
+.card-4 {
+    width: 100%;
+    position: relative;
+    margin: 100px auto;
+    height: 300px;
+}
+.one, .two, .three, .four
+{
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12em;
+  color:transparent;
+}
+.one:before, .two:before, .three:before, .four:before 
+{
+  content: attr(data-name);
+  color: pink;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transition: .3s;
+}
+.one:after, .two:after, .three:after, .four:after
+{
+  content: attr(data-name);
+  color: cyan;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transition: .3s;
+}
+
+
+.one:before, .two:before, .three:before, .four:before  
+{
+  clip-path: polygon(100% 0px, 0px 0px, 0px 100%, 100% 100%);
+}
+.one:after, .two:after, .three:after, .four:after  
+{
+  clip-path: polygon(100% 0, 100% , 0 100%, 100% 100%);
+}
+
+
+
+.one:hover:before 
+{
+  top: -15px;
+  left: -20px;
+  transform: translatey(-20px, -20px);
+}
+.one:hover:after 
+{
+  top: 15px;
+  left: 20px;
+  transform: translatey(20px,20px);
+}
+
+.two:hover:before 
+{
+    top: -20px;
+    right: -35px;
+    transform: translatey(-90deg);
+}
+.two:hover:after 
+{
+    bottom: -20px;
+    left: -35px;
+    transform: translatey(90deg);
+}
+
+.three:hover:before 
+{
+    top: 15px;
+    left: 20px;
+    transform: translatey(20px,20px);
+}
+.three:hover:after 
+{
+    top: -15px;
+    left: -20px;
+    transform: translatey(-20px, -20px);
+}
+
+.four:hover:before
+{
+    bottom: -20px;
+    left: -35px;
+    transform: translatey(20px,-20px);
+}
+.four:hover:after 
+{
+    top: -20px;
+    right: -35px;
+    transform: translatey(-20px, 20px);
+}
